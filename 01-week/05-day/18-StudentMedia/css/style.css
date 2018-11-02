@@ -1,0 +1,102 @@
+/**
+ * Media Query Demo (note the commented rules)
+ **/
+
+* {
+  box-sizing: border-box;
+}
+
+/*
+  The background color will be #ccc
+  at browser widths above 768px
+*/
+body {
+  /* Typography */
+  font-size: 18px;
+  line-height: 27px;
+
+  /* Visual */
+  background-color: #ccc;
+}
+
+h1 {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*
+  The width of the wrapper will be 1024px
+  at browser widths above 768px
+*/
+.wrapper {
+  /* Box-model */
+  width: 1024px;
+
+  /* Positioning */
+  margin: 40px auto;
+}
+
+#main-content,
+#sidebar,
+#congrats {
+  /* Box-model */
+  width: 500px;
+  padding: 30px;
+}
+
+#main-content {
+  /* Positioning */
+  float: left;
+
+  /* Visual */
+  background: #fff;
+}
+
+#sidebar {
+  /* Positioning */
+  float: right;
+
+  /* Visual */
+  background: #eee;
+}
+
+#congrats {
+  display: none;
+  background: #777777;
+  float: right;
+}
+
+/*
+  These rules take effect when the browser's width
+  is either 768px or less.
+*/
+@media screen and (max-width: 768px) {
+  /* The body's bg color will be #333 */
+  body {
+    background-color: #333;
+  }
+
+  /* The wrapper's width will be 600px */
+  .wrapper {
+    width: 100%;
+    margin: 15px;
+  }
+
+  #main-content,
+  #sidebar,
+  #congrats {
+    width: 100%;
+    /* margin: 0 auto; */
+    /* margin: 0 20px; */
+  }
+  #main-content {
+    margin-bottom: 20px;
+  }
+
+  #congrats {
+    margin-top: 20px;
+    display: block;
+  }
+}

@@ -1,0 +1,119 @@
+<!-- Bootstrap-Powered HTML -->
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+
+  </title>
+
+  <!-- We link our html to the Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<!-- NAVBAR, ONE ROW, 8-4 (2 subrows, 12, 3-9), Sidebar Card -->
+<body>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Container Div -->
+  <div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+                <h1>About Me</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="https://via.placeholder.com/150" alt="placeholder image" class="img-thumbnail">
+                </div>
+                <div class="col-md-9">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla nisi, auctor quis lectus a, elementum pretium velit. Nullam volutpat leo vitae nisl consectetur tincidunt. Mauris scelerisque neque at augue pretium convallis. Nullam pellentesque felis sit amet accumsan ultrices. Cras placerat quam non metus efficitur, ut ornare elit suscipit. Sed tincidunt non dolor nec tincidunt. Duis dictum ligula auctor tellus maximus scelerisque. Aliquam tortor lectus, mollis nec ex sed, laoreet commodo metus. Sed nibh eros, luctus at leo blandit, condimentum lobortis sem. Curabitur euismod ullamcorper velit eu faucibus. Praesent ornare, nulla id rhoncus sollicitudin, elit nisi placerat est, sit amet sagittis ligula lectus eget lorem. Donec consectetur ligula nisi, ac pulvinar nulla commodo eget.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                            Want more Lipsum?
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog model-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">More Lorem Ipsum!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed tellus pellentesque, malesuada nunc at, scelerisque nulla. Integer rhoncus tristique sodales. Quisque dignissim lectus varius leo aliquet, vehicula malesuada turpis tincidunt. Duis quis dui fermentum, hendrerit tortor at, luctus mi. Fusce lectus metus, efficitur quis risus ut, rutrum fringilla mi. Aenean eget tempor erat, vitae viverra purus.</p>
+                                    <p>Donec vel dignissim felis. Duis nisl nibh, mollis at rhoncus eu, vestibulum nec tellus. Nullam at mauris pulvinar, convallis risus at, dictum enim. Proin quis augue sit amet odio blandit lobortis. Morbi vulputate vestibulum nisl vel ultrices. Aliquam vulputate massa eleifend urna posuere, vel semper arcu dapibus. Proin laoreet maximus elit, eu condimentum libero lacinia eget. </p>
+                                    <p>Cras varius euismod sem at gravida. In eget erat ut ipsum tincidunt vehicula non sed felis. Sed ac venenatis magna, at porttitor dolor. Sed ac volutpat nisi, elementum iaculis diam. Integer quis dui id nulla auctor tincidunt ut sed leo. Nulla facilisi. Integer luctus, orci eu tempus dapibus, tellus ligula eleifend libero, id pharetra elit libero et ligula. Donec eleifend dignissim velit, quis dignissim mi iaculis et.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed tellus pellentesque, malesuada nunc at, scelerisque nulla. Integer rhoncus tristique sodales. Quisque dignissim lectus varius leo aliquet, vehicula malesuada turpis tincidunt. Duis quis dui fermentum, hendrerit tortor at, luctus mi. Fusce lectus metus, efficitur quis risus ut, rutrum fringilla mi. Aenean eget tempor erat, vitae viverra purus.</p>
+                                    <p>Donec vel dignissim felis. Duis nisl nibh, mollis at rhoncus eu, vestibulum nec tellus. Nullam at mauris pulvinar, convallis risus at, dictum enim. Proin quis augue sit amet odio blandit lobortis. Morbi vulputate vestibulum nisl vel ultrices. Aliquam vulputate massa eleifend urna posuere, vel semper arcu dapibus. Proin laoreet maximus elit, eu condimentum libero lacinia eget. </p>
+                                    <p>Cras varius euismod sem at gravida. In eget erat ut ipsum tincidunt vehicula non sed felis. Sed ac venenatis magna, at porttitor dolor. Sed ac volutpat nisi, elementum iaculis diam. Integer quis dui id nulla auctor tincidunt ut sed leo. Nulla facilisi. Integer luctus, orci eu tempus dapibus, tellus ligula eleifend libero, id pharetra elit libero et ligula. Donec eleifend dignissim velit, quis dignissim mi iaculis et.</p>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">This button does nothing</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</html>
