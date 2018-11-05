@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Conditional Activity</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+        var eatSteak = confirm("Do you eat Steak?");
+        if (eatSteak) {
+            document.write("Here's a Steak Sandwich!");
+        }
+
+        else {
+            document.write("Here's a Tofu Stir-Fry!")
+        }
+
+        var birthYear = prompt("What is your birth year?")
+        if (2018 - birthYear > 21) {
+            alert("Have some premium sake, on the house!")
+        }
+
+        else {
+            alert("No Sake for you!")
+        }
+
+    </script>
+
+  </body>
+</html>

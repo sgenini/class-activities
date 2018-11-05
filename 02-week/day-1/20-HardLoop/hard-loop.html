@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Looping Through Arrays</title>
+  </head>
+  <body>
+
+    <h1>Open the console to see the magic!</h1>
+
+    <script>
+
+        var myFarm = ["chickens", "pigs", "cows", "horses", "ostriches"];
+
+        for (var i = 0; i < myFarm.length; i++) {
+            if (myFarm[i].charAt(0) === "c" || myFarm[i][0] === "o"){
+                console.log(myFarm[i] + " starts with c or an o!");
+            }
+        }
+
+        // for (var i = 0; i < myFarm.length; i++) {
+        //     if (myFarm[i].charAt(0) = "c", "o"){
+        //         alert("Starts with c or an o!");
+        //     }
+        // }
+
+
+    </script>
+    
+  </body>
+</html>
