@@ -1,0 +1,90 @@
+<!-- Bootstrap-Powered HTML -->
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>
+    Question Game
+  </title>
+
+  <!-- We link our html to the Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!-- Container Div -->
+  <div class="container">
+    <div class="jumbotron mt-3">
+        <h1 class="text-center">Welcome to the Question Game! <br> <small class="text-muted text-center">Press T or F to answer the questions!</small></h1>
+        <p class="mt-2 text-center" id="score-text"></p>
+        <p class="mt-4 text-center" id="game"></p>
+        <p class="mt-2 text-center" id="game-over"></p>
+    </div>
+  </div>
+
+  <script>
+
+        var questionIndex = 0;
+        var score = 0;
+        var questionDiv = document.getElementById('game');
+        var gameoverDiv = document.getElementById('game-over');
+        var scoreDiv = document.getElementById('score-text');
+
+        var questions = [
+            {q: "Is the sky blue?", a: "t"},
+            {q: "Is the grass green?", a: "t"},
+            {q: "Do cows meow?", a: "f"},
+            {q: "Do cats bark?", a: "f"},
+            {q: "Do pigs fly?", a: "f"},
+            {q: "Are chickens mammals?", a: "f"},
+            {q: "Are humans mammals?", a: "t"},
+            {q: "Are machines sentient?", a: "f"},
+            {q: "Is Harry Potter a wizard?", a: "t"},
+            {q: "Do you want to build a snowman?", a: "f"},
+        ];
+
+        function askQuestion(){
+            if(questionIndex === questions.length){
+                gameoverDiv.innerHTML = "Game over! You scored " + score + " points out of " + questions.length + "!" + "<br> <button type='button' class='btn btn-primary mt-3' onClick='restartGame()'>Reset</button>";
+                scoreDiv.textContent = ""; 
+            }
+            questionDiv.textContent = questions[questionIndex].q;
+            scoreDiv.textContent = score + " out of " + questionIndex;
+        };
+
+    
+        document.onkeyup = function(event){
+            var input = event.key.toLowerCase();
+            if(input === "f" || input === "t"){
+                if(input === questions[questionIndex].a){
+                    alert("Sweet!");
+                    score++;
+                } else {
+                    alert("You wrong.");
+                }
+                questionIndex++
+                askQuestion();
+            }
+        }
+
+        askQuestion();
+
+        function restartGame(){
+            score = 0;
+            questionIndex = 0;
+            gameoverDiv.textContent = "";
+            askQuestion();
+        }
+</script>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Question Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <p id="game"></p>
+        <p id="game-over"></p>
+        
+        <script>
+
+            var questionIndex = 0;
+            var score = 0;
+            var questionDiv = document.getElementById('game');
+            var gameoverDiv = document.getElementById('game-over');
+
+            var questions = [
+                {q: "Is the sky blue?", a: "t"},
+                {q: "Is the grass green?", a: "t"},
+                {q: "Do cows meow?", a: "f"},
+                {q: "Do cats bark?", a: "f"},
+                {q: "Do pigs fly?", a: "f"},
+                {q: "Are chickens mammals?", a: "f"},
+                {q: "Are humans mammals?", a: "t"},
+                {q: "Are machines sentient?", a: "f"},
+                {q: "Is Harry Potter a wizard?", a: "t"},
+                {q: "Do you want to build a snowman?", a: "f"},
+            ];
+
+            function askQuestion(){
+                if(questionIndex === questions.length){
+                    gameoverDiv.textContent = "Game over! You scored " + score + " points out of " + questions.length + "!"; 
+                }
+                questionDiv.textContent = questions[questionIndex].q;
+            };
+
+        
+          
+            
+
+        document.onkeyup = function(event){
+            if(event.key === "f" || event.key === "t"){
+                if(event.key === questions[questionIndex].a){
+                    alert("Sweet!");
+                    score++;
+                } else {
+                    alert("You wrong.");
+                }
+                questionIndex++
+                askQuestion();
+            }
+        }
+
+        askQuestion();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>My First Object</title>
+  </head>
+  <body>
+
+    <script>
+
+      var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+        driveToWork: function() {
+            if (!this.isWorking){
+                return;
+            }
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+            if (!this.isWorking){
+                return;
+            }
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        }
+      };
+
+
+
+    function reWriteStats(){
+	    console.log(car.make);
+	    console.log(car.model);
+	    console.log(car.mileage);
+	    console.log(car.isWorking);
+	    console.log("===========");
+    }
+
+    document.onkeyup = function(event){
+        var input = event.key.toLowerCase();
+        if (input === "h"){
+            car.honk();
+        } 
+        if (input === "t"){
+            car.getTuneUp();
+        } 
+        if (input === "d"){
+            car.driveToWork();
+        } 
+        if (input === "w"){
+            car.driveAroundWorld();
+        }
+        reWriteStats();     
+    }
+
+    </script>
+    
+</body>
+</html>
