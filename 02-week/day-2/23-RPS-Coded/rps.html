@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors
+  </title>
+</head>
+
+<body>
+
+  <div id="game">
+    <p>Wins: <span id="wins"><strong>0</strong></span></p>
+    <p>Losses: <span id="losses"><strong>0</strong></span></p>
+    <p>Ties: <span id="ties"><strong>0</strong></span></p>
+    <br>
+    <p>Your Guess: <strong><span id="user-guess">Make your Choice!</span></strong></p>
+    <p>Computer Guess: <strong><span id="computer-guess">Waiting for your Input</span></strong></p>
+
+  </div>
+
+  <script type="text/javascript">
+    //   How to Play Alert
+    alert("Press R, P, or S to begin!")
+
+    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+    var computerChoices = ["r", "p", "s"];
+
+    var userGuess = document.querySelector("#user-guess");
+    var computerGuess = document.getElementById("computer-guess");
+    var winCount = document.getElementById("wins");
+    var lossCount = document.getElementById("losses");
+    var tieCount = document.getElementById("ties");
+    var wins = 0;
+
+
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function(event) {
+        
+      // Displays the key the user pressed (userGuess).
+        userGuess.textContent = event.key;    
+    
+      // Displays the Computer's guess.
+        computerGuess.textContent = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    };
+
+    console.log("winCount = ", winCount)
+    console.log("userGuess = ", userGuess)
+    console.log("computerGuess =", computerGuess)
+
+    // // IF ELSE STATEMENTS
+    // if (userGuess = "r" && computerGuess = "s") {
+    //   wins = wins + 1;
+    //   document.getElementById("wins").innerHTML = wins.toString();
+    // }
+
+
+
+    //   // else if(userGuess = "s" && computerGuess = "p")
+    //   // else if(userGuess = "p" && computerGuess = "r")
+
+    //   for (var i = 0; i < 10; i++) {
+    //   }
+
+
+  </script>
+
+</body>
+
+</html>

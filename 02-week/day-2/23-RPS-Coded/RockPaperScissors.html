@@ -1,0 +1,84 @@
+<!-- Bootstrap-Powered HTML -->
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>
+    Rock Paper Scissors
+  </title>
+
+  <!-- We link our html to the Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!-- Container Div -->
+  <div class="container">
+    <div class="jumbotron mt-3">
+        <h3 class="text-center" id="directions-text">Welcome to Rock Paper Scissors!<br><small class="text-muted">Press r, p, or s to start playing!</small></h3>
+        <p class="text-center" id="userchoice-text"></p>
+        <p class="text-center" id="computerchoice-text"></p>
+        <p class="text-center" id="wins-text"></p>
+        <p class="text-center" id="losses-text"></p>
+        <p class="text-center" id="ties-text"></p>
+    </div>
+  </div>
+
+<script type="text/javascript">
+
+    var computerChoices = ["r", "p", "s"];
+
+    var wins = 0;
+    var losses = 0;
+    var ties = 0;
+    var guesses = 9;
+
+    var directionsText = document.getElementById("directions-text");
+    var userChoiceText = document.getElementById("userchoice-text");
+    var computerChoiceText = document.getElementById("computerchoice-text");
+    var winsText = document.getElementById("wins-text");
+    var lossesText = document.getElementById("losses-text");
+    var tiesText = document.getElementById("ties-text");
+
+    document.onkeyup = function(event) {
+        var userGuess = event.key;
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+        if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+            if ((userGuess === "r" && computerGuess === "s") ||
+                (userGuess === "s" && computerGuess === "p") ||
+                (userGuess === "p" && computerGuess === "r")) {
+                    wins++;
+                }
+                else if (userGuess === computerGuess) {
+                    ties++;
+                }
+                else {
+                    losses++;
+                }
+            directionsText.textContent = "";
+
+            userChoiceText.textContent = "You chose: " + userGuess;
+            computerChoiceText.textContent = "The computer chose: " + computerGuess;
+            winsText.textContent = "Wins: " + wins;
+            lossesText.textContent = "Losses: " + losses;
+            tiesText.textContent = "Ties: " + ties;
+        }
+        else {
+            directionsText.textContent = "Invalid input: you must press r, p, or s."
+        }
+    };
+
+</script>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</html>
