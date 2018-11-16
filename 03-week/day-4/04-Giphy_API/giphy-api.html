@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Giphy API</title>
+</head>
+
+<body>
+  <div class="container"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // Example queryURL for Giphy API
+    var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+
+      var gifArray = response.data;
+      for (var i = 0; i < gifArray.length; i++){
+        var gifImage = $('<img>');
+        gifImage.attr('src', gifArray[i].images.fixed_height.url);
+        $('.container').append(gifImage);
+      }
+     
+      // extract the array of gifs <--
+      // loop through array <--
+      // make a blank image container <--
+      // add the url to gif to the image container <--
+      // append to screen <--
+
+      // var gifArray = response.data;
+      // // console.log(gifArray)
+      // for(var i = 0; i < gifArray.length; i++){
+      //   var image = $('<img>');
+      //   image.attr('src', gifArray[i].images.fixed_height.url);
+      //   $('.container').append(image);
+      // }
+
+    });
+  </script>
+
+</body>
+
+</html>
