@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>The Magical Cat Button</title>
+</head>
+
+<body>
+  <button id="puppy-button">magical puppy button</button>
+  <div id="images">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    //
+    $("#puppy-button").on("click", function() {
+
+      //
+      var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cat";
+
+      //
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+
+      //
+        .then(function(response) {
+          console.log(response);
+
+        //
+          var imageUrl = response.data.image_original_url;
+
+          //
+          var puppyImage = $("<img height='300'>");
+
+          //
+          puppyImage.attr("src", imageUrl);
+          puppyImage.attr("alt", "puppy image");
+
+          //
+          $("#images").prepend(puppyImage);
+        });
+    });
+  </script>
+</body>
+
+</html>
