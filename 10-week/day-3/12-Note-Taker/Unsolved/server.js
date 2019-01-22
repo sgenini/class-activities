@@ -44,30 +44,97 @@ app.get("/", function(req, res) {
 // 1. Save a note to the database's collection
 // POST: /submit
 // ===========================================
+<<<<<<< HEAD
+=======
+app.post("/submit", function(req, res){
+  db.notes.insert({
+    title: req.body.title,
+    note: req.body.note,
+    created: req.body.created
+  });
+});
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 
 // 2. Retrieve all notes from the database's collection
 // GET: /all
 // ====================================================
+<<<<<<< HEAD
+=======
+app.get("/all", function(req, res){
+  db.notes.find({}, function(error, found){
+    if (error) {
+      console.log(error)
+    }
+    else {
+      res.json(found)
+    }
+  });
+})
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 
 // 3. Retrieve one note in the database's collection by it's ObjectId
 // TIP: when searching by an id, the id needs to be passed in
 // as (mongojs.ObjectId(IdYouWantToFind))
 // GET: /find/:id
+<<<<<<< HEAD
+=======
+app.get("/find/:id", function(req, res){
+  db.notes.findOne({
+    _id: mongojs.ObjectId(req.params.id)
+  }, function(error, found){
+    if (error) {
+      console.log(error)
+    }
+    else {
+      res.json(found);
+    }
+  });
+});
+
+
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 // ==================================================================
 
 // 4. Update one note in the database's collection by it's ObjectId
 // (remember, mongojs.ObjectId(IdYouWantToFind)
 // POST: /update/:id
+<<<<<<< HEAD
+=======
+app.post("/update/:id", function(req, res){
+  db.notes.update({
+    _id: mongojs.ObjectId(req.params.id)
+  }, {$set: {
+    title: req.body.title,
+    note: req.body.note,
+    created: req.body.created
+  }});
+});
+
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 // ================================================================
 
 // 5. Delete one note from the database's collection by it's ObjectId
 // (remember, mongojs.ObjectId(IdYouWantToFind)
 // GET: /delete/:id
 // ==================================================================
+<<<<<<< HEAD
+=======
+app.get("/delete/:id", function(req, res){
+  db.notes.remove({
+    _id: mongojs.ObjectId(req.params.id)
+  });
+});
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 
 // 6. Clear the entire note collection
 // GET: /clearall
 // ===================================
+<<<<<<< HEAD
+=======
+app.get("/clearall", function (req, res){
+  db.notes.drop();
+});
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 
 // Listen on port 3000
 app.listen(3000, function() {

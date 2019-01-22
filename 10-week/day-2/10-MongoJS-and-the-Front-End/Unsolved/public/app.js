@@ -19,10 +19,64 @@
 // We'll be rewriting the table's data frequently, so let's make our code more DRY
 // by writing a function that takes in data (JSON) and creates a table body
 function displayResults(data) {
+<<<<<<< HEAD
   // Add to the table here...
 }
 
+=======
+  $("#table-body").empty();
+  for (var i = 0; i < data.length; i++){
+    var animalName = data[i].name;
+    var animalLegs = data[i].numLegs;
+    var animalClass = data[i].class;
+    var animalWeight = data[i].weight;
+    var animalNewName = data[i].whatIWouldReallyCallIt;
+    $("#table-body").append(
+      "<tr><td>" + animalName + 
+      "</td><td>" + animalLegs + 
+      "</td><td>" + animalClass + 
+      "</td><td>" + animalWeight + 
+      "</td><td>" + animalNewName + 
+      "</td></tr>"
+      )
+  }
+}
+
+// function displayResults(animals) {
+//   $("tbody").empty();
+//   animals.forEach(function(animal){
+//     var tr = $("<tr>");
+//     tr.append("<td>").text(animal.name);
+//     tr.append("<td>").text(animal.numLegs);
+//     tr.append("<td>").text(animal.class);
+//     tr.append("<td>").text(animal.weight);
+//     tr.append("<td>").text(animal.whatIWouldReallyCallIt);
+//   })
+//   $("tbody").append(tr);
+// }
+
+
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 $.getJSON("/all", function(data) {
   // Call our function to generate a table body
   displayResults(data);
 });
+<<<<<<< HEAD
+=======
+
+$("#weight-sort").on("click", function(){
+  $.getJSON("/weight", function(data) {
+    displayResults(data);
+    $("#animal-weight").attr("class", "active");
+    $("#animal-name").attr("class", "");
+  });
+})
+
+$("#name-sort").on("click", function(){
+  $.getJSON("/name", function(data) {
+    displayResults(data);
+    $("#animal-name").attr("class", "active");
+    $("#animal-weight").attr("class", "");
+  });
+})
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646

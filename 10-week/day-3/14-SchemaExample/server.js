@@ -13,7 +13,11 @@ var data = {
   boolean: false,
   string:
     "\"Don't worry if it doesn't work right. If everything did, you'd be out of a job\" - Mosher's Law of Software Engineering",
+<<<<<<< HEAD
   number: 42
+=======
+  number: 45
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 };
 
 // Save a new Example using the data object

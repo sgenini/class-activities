@@ -6,6 +6,34 @@ var Schema = mongoose.Schema;
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
 var UserSchema = new Schema({
+<<<<<<< HEAD
+=======
+  username: {
+    type: String,
+    trim: true,
+    required: "Username is required."
+  },
+  password: {
+    type: String,
+    trim: true,
+    required: "Password is required.",
+    validate: [
+      function(input) {
+        return input.length >= 6;
+      },
+      "Password needs to be at least 6 characters."
+    ]
+  },
+  email: {
+    type: String,
+    unique: true,
+    match: [/.+@.+\..+/, "Please enter a valid email address."]
+  },
+  userCreated: {
+    type: Date,
+    default: Date.now
+  }
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
   /* TODO:
    * Add four entries into our schema. These should be:
    *
@@ -18,6 +46,10 @@ var UserSchema = new Schema({
    * TIP: The regex for checking if a string is an email is: /.+\@.+\..+/
    * Use that with the model attribute that checks for a valid match.
    * -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 });
 
 // This creates our model from the above schema, using mongoose's model method

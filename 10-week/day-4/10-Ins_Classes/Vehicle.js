@@ -21,6 +21,7 @@ class Vehicle {
   }
 }
 
+<<<<<<< HEAD
 var volvo = new Vehicle();
 
 volvo.logSpeed();
@@ -28,6 +29,15 @@ volvo.logSpeed();
 volvo.accelerate();
 
 volvo.accelerate(30);
+=======
+// var vehicle = new Vehicle();
+
+// vehicle.logSpeed();
+
+// vehicle.accelerate();
+
+// vehicle.accelerate(30);
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 
 // --- Pre ES6 version
 

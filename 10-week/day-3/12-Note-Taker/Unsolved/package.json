@@ -4,7 +4,10 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+<<<<<<< HEAD
     
+=======
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
     "express": "^4.16.3",
     "mongojs": "^2.3.0",
     "morgan": "^1.7.0"
