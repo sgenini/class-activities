@@ -38,6 +38,8 @@ app.get("/", function(req, res) {
 // This route will retrieve all of the data
 // from the scrapedData collection as a json (this will be populated
 // by the data you scrape using the next route)
+<<<<<<< HEAD
+=======
 app.get("/all", function(req, res){
   
   db.scrapedData.find({}, function(error, found){
@@ -49,6 +51,7 @@ app.get("/all", function(req, res){
     }
   });
 });
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 
 // Route 2
 // =======
@@ -59,6 +62,9 @@ app.get("/all", function(req, res){
 // into an empty array in the last class. How do you
 // push it into a MongoDB collection instead?
 
+<<<<<<< HEAD
+/* -/-/-/-/-/-/-/-/-/-/-/-/- */
+=======
 app.get("/scrape", function(req, res){
   var cheerio = require("cheerio");
   var axios = require("axios");
@@ -89,6 +95,7 @@ app.get("/scrape", function(req, res){
 
 
  /* -/-/-/-/-/-/-/-/-/-/-/-/- */
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 
 // Listen on port 3000
 app.listen(3000, function() {

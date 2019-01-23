@@ -25,8 +25,13 @@ console.log(parents); // prints `["Aerys II Targaryen", "Rhaella Targaryen"]`
 
 // We can also rename our destructured properties like so
 
+<<<<<<< HEAD
+const { name: daenerysName, parents: daenerysParents } = daenerys;
+console.log(daenerysName, daenerysParents); // prints `"Daenerys Targaryen"`
+=======
 const { name: daenerysName } = daenerys;
 console.log(daenerysName); // prints `"Daenerys Targaryen"`
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 
 // We can also destructure parameters using the same feature. e.g. previously we might have done something like this
 

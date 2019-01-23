@@ -43,5 +43,9 @@ app.post("/submit", function(req, res) {
 
 // Start the server
 app.listen(PORT, function() {
+<<<<<<< HEAD
+  console.log("App running on port " + PORT + "!");
+=======
   console.log("App running on http://localhost:" + PORT + "!");
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
 });

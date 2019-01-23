@@ -12,7 +12,10 @@ console.log("\n***********************************\n" +
 // Making a request via axios for reddit's "webdev" board. The page's HTML is passed as the callback's third argument
 axios.get("https://old.reddit.com/r/webdev/").then(function(response) {
 
+<<<<<<< HEAD
+=======
   // console.log(response);
+>>>>>>> 13edc72205dd327ee35f5f927f402c1fcf8d6646
   // Load the HTML into cheerio and save it to a variable
   // '$' becomes a shorthand for cheerio's selector commands, much like jQuery's '$'
   var $ = cheerio.load(response.data);
