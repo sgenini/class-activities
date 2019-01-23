@@ -1,0 +1,1 @@
+<span onClick = {() => deleteBook(book._id)}>x</span>
